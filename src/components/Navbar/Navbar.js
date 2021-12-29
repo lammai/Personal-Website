@@ -14,14 +14,23 @@ const Navbar = () => {
   return (
     <Nav>
       <LogoContainer to='/'>
-        <h2>Logo</h2>
+        <h2>Lam Mai</h2>
+        <h3>Developer | 3D Artist</h3>
       </LogoContainer>
       <NavMenu menuOpen={menuOpen}>
         <LinksContainer>
-          <NavLink to='/works'>Works</NavLink>
-          <NavLink to='/experiments'>Experiments</NavLink>
-          <NavLink to='/gallery'>Gallery</NavLink>
-          <NavLink to='/about'>About</NavLink>
+          <NavLink onClick={() => setMenuOpen(false)} to='/works'>
+            Works
+          </NavLink>
+          <NavLink onClick={() => setMenuOpen(false)} to='/experiments'>
+            Experiments
+          </NavLink>
+          <NavLink onClick={() => setMenuOpen(false)} to='/gallery'>
+            Gallery
+          </NavLink>
+          <NavLink onClick={() => setMenuOpen(false)} to='/about'>
+            About
+          </NavLink>
         </LinksContainer>
       </NavMenu>
       <Bars onClick={() => setMenuOpen(!menuOpen)} />

@@ -51,10 +51,10 @@ export const Nav = styled.nav`
 `;
 
 export const LogoContainer = styled(Link)`
-  display: flex;
+  display: block;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   height: 100%;
   overflow: hidden;
   max-width: 1920px;
@@ -65,6 +65,24 @@ export const LogoContainer = styled(Link)`
     font-size: 2rem;
     font-weight: bold;
     color: ${colors.light};
+    transition: 0.3s ease all;
+  }
+  h3 {
+    font-weight: 400;
+    color: ${colors.light};
+    transition: 0.3s ease all;
+  }
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: ${colors.light};
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: ${colors.light};
+    }
   }
 `;
 
@@ -139,7 +157,7 @@ export const Bars = styled(FaBars)`
     position: relative;
     align-items: center;
     font-size: 2rem;
-    transform: translate(-100%, 170%);
+    transform: translate(-50%, 75%);
     transition: 0.3s ease all;
 
     &:hover {
@@ -183,7 +201,7 @@ export const NavMenu = styled.div`
     backdrop-filter: blur(2px);
     div {
       a {
-        padding: 3em;
+        padding: 2em 3em;
       }
     }
   }
