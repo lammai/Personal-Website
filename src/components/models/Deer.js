@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei';
 
 export default function Deer(props) {
   const group = useRef();
-  const { nodes } = useGLTF('/assets/models/untitled.glb');
+  const { nodes } = useGLTF('/assets/models/deer.glb');
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh

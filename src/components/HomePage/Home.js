@@ -2,10 +2,11 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Box, OrbitControls, Stars } from '@react-three/drei';
 import { useControls } from 'leva';
-import { softShadows } from '@react-three/drei';
+import { softShadows, Html } from '@react-three/drei';
 import Deer from '../models/Deer';
 import { canvasContainer } from '../../styling';
 import { Ocean } from './Ocean';
+import { Viewcube } from './Portal';
 
 softShadows();
 
@@ -27,8 +28,7 @@ const Home = () => {
   return (
     <div css={canvasContainer}>
       <Canvas shadows camera={{ position: [-72, 72, 72], fov: 60 }}>
-        <Suspense fallback={null}>
-          {/* <PerspectiveCamera makeDefault position={[-72, 72, 72]} fov={60} /> */}
+        <Suspense fallback={<Html center>Loading...</Html>}>
           {/* <fog attach='fog' args={[color, near, far]} /> */}
           <fog attach='fog' args={['#212121', -324, 420]} />
           <OrbitControls
@@ -64,22 +64,14 @@ const Home = () => {
             saturation={99}
             fade
           />
-          {/* <mesh position={[-10, 23.01, -1]}>
-            <boxGeometry args={[30, 45, 3]} />
-            <meshPhysicalMaterial color='white' />
-          </mesh> */}
-          <Box args={[30, 45, 3]} position={[-10, 23.01, -1]}>
-            <meshPhysicalMaterial
-              color='red'
-              metalness={0.1}
-              roughness={0.3}
-              emissive='red'
-              emissiveIntensity={9}
-            />
+          <Box args={[30, 45, 0.6]} position={[-10, 23.01, -1.5]}>
+            <meshPhysicalMaterial color='red' metalness={0.1} roughness={0.3} />
           </Box>
           <ReflectionScene />
+          <Viewcube />
         </Suspense>
       </Canvas>
+      {/* <Loader /> */}
     </div>
   );
 };
