@@ -49,6 +49,9 @@ export const Viewcube = React.forwardRef((props, ref) => {
   }, []);
 
   useFrame(() => {
+    meshRef.current.rotation.y = clock.getElapsedTime();
+    meshRef.current.rotation.x = clock.getElapsedTime();
+
     //relatively align other cam with main cam
     let relativePos = portalAref.current.worldToLocal(
       mainMoverRef.current.position.clone()
@@ -166,15 +169,15 @@ export const Viewcube = React.forwardRef((props, ref) => {
       <ambientLight intensity={1} color='red' />
       <mesh
         ref={meshRef}
-        position={[offsetX - 1.5, offsetY + 1, offsetZ + 200]}
+        position={[offsetX - 1.5, offsetY + 1, offsetZ + 270]}
       >
         {/* <boxBufferGeometry attach='geometry' args={[2, 2, 2]} /> */}
-        <dodecahedronBufferGeometry attach='geometry' args={[10, 0]} />
+        <tetrahedronBufferGeometry attach='geometry' args={[10, 0]} />
         <meshStandardMaterial
           attach='material'
-          color='#696969'
-          metalness={0.6}
-          roughness={0.2}
+          color='#ff2340'
+          metalness={0.3}
+          roughness={0.1}
         />
       </mesh>
       <WorldPortal

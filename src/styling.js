@@ -17,7 +17,7 @@ import { FaBars } from 'react-icons/fa';
 const colors = {
   dark: 'rgb(29,29,29)',
   light: '#ffffff',
-  primary: 'rgb(162,162,246)',
+  primary: '#ff3b45',
   bg: 'rgb(244,244,255)',
 };
 
@@ -204,5 +204,21 @@ export const NavMenu = styled.div`
         padding: 2em 3em;
       }
     }
+  }
+`;
+
+export const Gal = styled.div`
+  padding: 100px 0;
+  height: 100%;
+  overflow: auto;
+`;
+export const ImageContainer = styled.div`
+  display: grid;
+  justify-content: center;
+  transition: 0.3s ease all;
+  img {
+    width: 100%;
+    height: auto;
+    padding: 1.5em 2.5em;
   }
 `;
