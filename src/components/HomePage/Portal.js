@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { DoubleSide, Vector3, Plane } from 'three';
 import { PerspectiveCamera } from '@react-three/drei';
-import { useControls } from 'leva';
+// import { useControls } from 'leva';
 import Hallway from '../models/Hallway';
 
 const WorldPortal = React.forwardRef((props, ref) => {
@@ -169,16 +169,10 @@ export const Viewcube = React.forwardRef((props, ref) => {
       <ambientLight intensity={1} color='red' />
       <mesh
         ref={meshRef}
-        position={[offsetX - 1.5, offsetY + 1, offsetZ + 270]}
+        position={[offsetX - 1.5, offsetY + 1, offsetZ + 240]}
       >
-        {/* <boxBufferGeometry attach='geometry' args={[2, 2, 2]} /> */}
-        <tetrahedronBufferGeometry attach='geometry' args={[10, 0]} />
-        <meshStandardMaterial
-          attach='material'
-          color='#ff2340'
-          metalness={0.3}
-          roughness={0.1}
-        />
+        <icosahedronBufferGeometry args={[10, 0]} />
+        <meshBasicMaterial wireframe />
       </mesh>
       <WorldPortal
         ref={portalAref}

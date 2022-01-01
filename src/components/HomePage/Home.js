@@ -1,7 +1,7 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Box, OrbitControls, Stars } from '@react-three/drei';
-import { useControls } from 'leva';
+// import { useControls } from 'leva';
 import { softShadows, Html } from '@react-three/drei';
 import Deer from '../models/Deer';
 import { canvasContainer } from '../../styling';
