@@ -38,6 +38,18 @@ function ReflectionScene() {
   );
 }
 
+function Loading() {
+  return (
+    <Html
+      center
+      as='span'
+      style={{ color: 'white', backgroundColor: 'rgb(33,33,33)' }}
+    >
+      Loading...
+    </Html>
+  );
+}
+
 const Home = () => {
   // const { color, near, far } = useControls({
   //   color: '#212121',
@@ -47,9 +59,9 @@ const Home = () => {
   return (
     <div css={canvasContainer}>
       <Canvas shadows camera={{ position: [-72, 72, 72], fov: 60 }}>
-        <Suspense fallback={<Html center>Loading...</Html>}>
+        <Suspense fallback={<Loading />}>
           {/* <fog attach='fog' args={[color, near, far]} /> */}
-          <fog attach='fog' args={['#212121', -324, 420]} />
+          <fog attach='fog' args={['#212122', -324, 420]} />
           <OrbitControls
             enablePan={false}
             enableZoom={false}

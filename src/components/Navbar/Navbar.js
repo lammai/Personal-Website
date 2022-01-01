@@ -19,12 +19,12 @@ const Navbar = () => {
       </LogoContainer>
       <NavMenu menuOpen={menuOpen}>
         <LinksContainer>
-          <NavLink onClick={() => setMenuOpen(false)} to='/works'>
-            Works
+          <NavLink onClick={() => setMenuOpen(false)} to='/projects'>
+            Projects
           </NavLink>
-          <NavLink onClick={() => setMenuOpen(false)} to='/experiments'>
+          {/* <NavLink onClick={() => setMenuOpen(false)} to='/experiments'>
             Experiments
-          </NavLink>
+          </NavLink> */}
           <NavLink onClick={() => setMenuOpen(false)} to='/gallery'>
             Gallery
           </NavLink>

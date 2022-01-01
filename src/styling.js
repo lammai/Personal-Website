@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { NavLink as Link } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaGithub } from 'react-icons/fa';
 
 /**
  * header   Nav
@@ -208,9 +208,11 @@ export const NavMenu = styled.div`
 `;
 
 export const Gal = styled.div`
+  position: absolute;
   padding: 100px 0;
   height: 100%;
   overflow: auto;
+  z-index: 1;
 `;
 export const ImageContainer = styled.div`
   display: grid;
@@ -220,5 +222,139 @@ export const ImageContainer = styled.div`
     width: 100%;
     height: auto;
     padding: 1.5em 2.5em;
+  }
+`;
+
+export const ProjectWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const ProjectsDiv = styled.div`
+  @media screen and (min-width: 40em) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  position: absolute;
+  text-align: center;
+  top: 0;
+
+  align-items: center;
+  align-content: center;
+  padding: 90px 60px;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+`;
+
+export const ProjectContainer = styled.div`
+  flex: 1 0 500px;
+  box-sizing: border-box;
+  margin: 1rem 0.25em;
+  @media screen and (min-width: 40em) {
+    flex: 0 1 calc(50% - 1em);
+  }
+  @media screen and (min-width: 60em) {
+    flex: 0 1 calc(25% - 1.5em);
+  }
+
+  position: relative;
+  background: #181818;
+  width: 320px;
+  height: 450px;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(cubic-bezier(0.25, 0.8, 0.25, 1));
+  overflow: hidden;
+  &:hover {
+    img {
+      transform: scale(1.15) translate(-6%, -12%);
+    }
+    div {
+      bottom: 0;
+    }
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    padding: 0;
+    color: #d3faff;
+    font-size: 30px;
+  }
+
+  img {
+    /* width: 100%;
+    height: auto; */
+
+    height: 82%;
+    width: auto;
+    transition: 0.3s;
+  }
+`;
+
+export const ContentBox = styled.div`
+  position: absolute;
+  bottom: -55%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  padding: 30px;
+  background-color: #0f0f0f;
+  color: white;
+  line-height: 1;
+  transition: 0.25s;
+  p {
+    margin: 0 0 20px;
+    padding: 0;
+    font-size: 18px;
+  }
+`;
+
+export const TechIconContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  svg {
+    margin-left: 10px;
+  }
+`;
+
+export const GithublinkContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 0;
+  padding: 10px 30px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+`;
+
+export const ProjectGithub = styled(FaGithub)`
+  margin-left: 10px;
+`;
+
+export const LinkContainer = styled.div`
+  padding: 5px 10px;
+  background-color: #000000;
+  width: max-content;
+  height: auto;
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+  }
+  span {
+    color: white;
+    font-size: 20px;
   }
 `;
