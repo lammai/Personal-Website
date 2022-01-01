@@ -29,8 +29,8 @@ const LowpolySphere = (props) => {
         <meshBasicMaterial wireframe />
         <Html position={[-0.5, 1.7, 0]}>
           <Text label={'Hi! My name is Lam'} />
-          <Text label={'Student at UW Tacoma, Grad 2022'} symbol='🎓' />
-          <Text label={'Incoming developer @ DocuSign'} symbol='📝' />
+          <Text label={'UW Tacoma grad 2020'} symbol='🎓' />
+          <Text label={'Incoming dev @ DocuSign'} symbol='📝' />
         </Html>
         <Html position={[1, 0, 0]}>
           <Link url={'mailto:lam7.2521@gmail.com'} label={'Email'} />

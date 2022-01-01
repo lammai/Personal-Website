@@ -1,6 +1,11 @@
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  HashRouter,
+  Route,
+  Routes,
+} from 'react-router-dom';
 import Home from './components/HomePage/Home';
 import { Gallery } from './components/Gallery';
 import { Projects } from './components/Projects';
@@ -8,7 +13,7 @@ import { About } from './components/About';
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Navbar />
       <Routes>
         <Route path='/' exact element={<Home />} />
@@ -16,7 +21,7 @@ function App() {
         <Route path='/gallery' exact element={<Gallery />} />
         <Route path='/about' exact element={<About />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 

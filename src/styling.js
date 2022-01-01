@@ -355,6 +355,6 @@ export const LinkContainer = styled.div`
   }
   span {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
