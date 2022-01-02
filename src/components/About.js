@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import React, { Suspense, useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { Html, OrbitControls } from '@react-three/drei';
 import { LinkContainer } from '../styling';
 
@@ -24,9 +24,14 @@ const Text = ({ label, symbol }) => {
 };
 
 const LowpolySphere = (props) => {
+  const sphereRef = useRef();
+
+  useFrame(({ clock }) => {
+    sphereRef.current.rotation.y = clock.getElapsedTime() / 10;
+  });
   return (
     <group>
-      <mesh {...props}>
+      <mesh ref={sphereRef} {...props}>
         <icosahedronGeometry args={[1, 1]} />
         <meshBasicMaterial wireframe />
         <Html
@@ -63,7 +68,7 @@ export const About = () => {
   return (
     <Canvas>
       <Suspense fallback={null}>
-        <LowpolySphere position={[0, 0, 0]} />
+        <LowpolySphere position={[0, 0, 0]} rotation={[0.15, 0, 0]} />
         <OrbitControls />
       </Suspense>
     </Canvas>
