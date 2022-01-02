@@ -2,12 +2,7 @@ import React, { Suspense } from 'react';
 import { Gal, ImageContainer } from '../styling';
 import { Canvas } from '@react-three/fiber';
 import { Ocean } from './HomePage/Ocean';
-// import nofuture from '../../public/assets/textures/nofuture.png';
-// import nightwalk from '/assets/textures/nightwalk-final-edited.jpg';
-// import spooky from '/assets/textures/spooky.png';
-// import fog2020 from '/assets/textures/Fog2020-edited.jpg';
-// import cardistry2048 from '/assets/textures/cardistry2048.png';
-import { OrbitControls, Html } from '@react-three/drei';
+import { Loading } from './HomePage/Home';
 
 export const Gallery = () => {
   return (
@@ -25,8 +20,7 @@ export const Gallery = () => {
         </ImageContainer>
       </Gal>
       <Canvas camera={{ position: [-72, 72, 72], fov: 60 }}>
-        <Suspense fallback={<Html center>Loading...</Html>}>
-          {/* <fog attach='fog' args={['#212121', -324, 420]} /> */}
+        <Suspense fallback={<Loading />}>
           <ambientLight intensity={0.9} />
           <directionalLight
             intensity={1.5}

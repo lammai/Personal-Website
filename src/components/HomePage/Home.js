@@ -38,7 +38,7 @@ function ReflectionScene() {
   );
 }
 
-function Loading() {
+export function Loading() {
   return (
     <Html
       center

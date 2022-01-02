@@ -36,7 +36,7 @@ const LowpolySphere = (props) => {
           zIndexRange={[100, 0]}
         >
           <Text label={'Hi! My name is Lam'} />
-          <Text label={'UW Tacoma grad 2020'} symbol='🎓' />
+          <Text label={'UW Tacoma grad 2022'} symbol='🎓' />
           <Text label={'Incoming dev @ DocuSign'} symbol='📝' />
         </Html>
         <Link

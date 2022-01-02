@@ -3,17 +3,6 @@ import styled from '@emotion/styled';
 import { NavLink as Link } from 'react-router-dom';
 import { FaBars, FaGithub } from 'react-icons/fa';
 
-/**
- * header   Nav
- *  div       logocontainer
- *    h2        logo
- *            bars
- *  nav       navMenu
- *    ul
- *      li...   NavLinks
- *    button
- */
-
 const colors = {
   dark: 'rgb(29,29,29)',
   light: '#ffffff',
@@ -117,37 +106,7 @@ export const LinksContainer = styled.div`
   }
 `;
 
-export const NavLink = styled(Link)`
-  /* color: ${colors.light};
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-
-  &:hover {
-    background: rgba(${colors.light}, 0.1);
-  } */
-
-  /* &.active {
-    color: #d9ff00ff;
-  } */
-`;
-
 export const Bars = styled(FaBars)`
-  /* display: none;
-  color: ${colors.light};
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    position: relative;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  } */
   display: none;
   color: ${colors.light};
 
@@ -164,10 +123,6 @@ export const Bars = styled(FaBars)`
       color: ${colors.primary};
     }
   }
-
-  /* ${mq[0]} {
-    display: none;
-  } */
 `;
 
 export const NavMenu = styled.div`
@@ -178,11 +133,6 @@ export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   transform: translate(0);
-  /* margin-right: 24px; */
-
-  /* flex-direction: column; */
-  /* background: red; */
-
   transition: 0.3s ease transform;
 
   @media screen and (max-width: 768px) {
@@ -269,7 +219,7 @@ export const ProjectContainer = styled.div`
   overflow: hidden;
   &:hover {
     img {
-      transform: scale(1.15) translate(-6%, -12%);
+      transform: scale(1.15) translate(0%, -12%);
     }
     div {
       bottom: 0;
@@ -287,9 +237,6 @@ export const ProjectContainer = styled.div`
   }
 
   img {
-    /* width: 100%;
-    height: auto; */
-
     height: 82%;
     width: auto;
     transition: 0.3s;
