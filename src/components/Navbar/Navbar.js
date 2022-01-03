@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <LogoContainer to='/'>
+      <LogoContainer onClick={() => setMenuOpen(false)} to='/'>
         <h2>Lam Mai</h2>
         <h3>Developer | 3D Artist</h3>
       </LogoContainer>

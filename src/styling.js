@@ -73,6 +73,13 @@ export const LogoContainer = styled(Link)`
       color: ${colors.light};
     }
   }
+
+  &:hover {
+    h2 {
+      border: 0.15px;
+      border-style: none none solid none;
+    }
+  }
 `;
 
 export const LinksContainer = styled.div`

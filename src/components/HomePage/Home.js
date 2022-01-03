@@ -1,6 +1,6 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Box, OrbitControls, Stars } from '@react-three/drei';
+import { Box, OrbitControls, Stars, CameraShake } from '@react-three/drei';
 // import { useControls } from 'leva';
 import { softShadows, Html } from '@react-three/drei';
 import Deer from '../models/Deer';
@@ -59,37 +59,42 @@ const Home = () => {
   return (
     <div css={canvasContainer}>
       <Canvas shadows camera={{ position: [-72, 72, 72], fov: 60 }}>
+        {/* <fog attach='fog' args={[color, near, far]} /> */}
+        <fog attach='fog' args={['#212122', -324, 420]} />
+        <OrbitControls
+          enablePan={false}
+          enableZoom={false}
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI / 2.01}
+          minAzimuthAngle={-Math.PI / 2}
+          maxAzimuthAngle={Math.PI / 2}
+          enableDamping={true}
+          makeDefault
+        />
+        <ambientLight intensity={0.4} />
+        <directionalLight
+          intensity={1.5}
+          position={[2.5, 8, 5]}
+          castShadow
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+          shadow-camera-far={50}
+          shadow-camera-left={-10}
+          shadow-camera-right={10}
+          shadow-camera-top={10}
+          shadow-camera-bottom={-10}
+        />
+        <pointLight position={[-10, 0, -20]} color='red' intensity={2.5} />
+        <pointLight position={[0, -10, 0]} intensity={1.5} />
         <Suspense fallback={<Loading />}>
-          {/* <fog attach='fog' args={[color, near, far]} /> */}
-          <fog attach='fog' args={['#212122', -324, 420]} />
-          <OrbitControls
-            enablePan={false}
-            enableZoom={false}
-            minPolarAngle={0}
-            maxPolarAngle={Math.PI / 2.01}
-            minAzimuthAngle={-Math.PI / 2}
-            maxAzimuthAngle={Math.PI / 2}
-            enableDamping={true}
-            makeDefault
-          />
-          <ambientLight intensity={0.4} />
-          <directionalLight
-            intensity={1.5}
-            position={[2.5, 8, 5]}
-            castShadow
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-            shadow-camera-far={50}
-            shadow-camera-left={-10}
-            shadow-camera-right={10}
-            shadow-camera-top={10}
-            shadow-camera-bottom={-10}
-          />
-          <pointLight position={[-10, 0, -20]} color='red' intensity={2.5} />
-          <pointLight position={[0, -10, 0]} intensity={1.5} />
           <ReflectionScene />
           <Viewcube />
         </Suspense>
+        <CameraShake
+          yawFrequency={0.05}
+          pitchFrequency={0.05}
+          rollFrequency={0.05}
+        />
       </Canvas>
     </div>
   );

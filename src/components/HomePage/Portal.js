@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { DoubleSide, Vector3, Plane } from 'three';
 import { PerspectiveCamera } from '@react-three/drei';
-// import { useControls } from 'leva';
 import Hallway from '../models/Hallway';
 
 const WorldPortal = React.forwardRef((props, ref) => {
@@ -154,18 +153,11 @@ export const Viewcube = React.forwardRef((props, ref) => {
 
   return (
     <>
-      <group ref={mainMoverRef} position={[0, 0, 0]}>
-        <PerspectiveCamera
-          ref={camRef}
-          makeDefault
-          position={[-72, 72, 72]}
-          fov={60}
-        />
-      </group>
+      <group ref={mainMoverRef} position={[0, 0, 0]}></group>
       <group ref={bCamMover} position={[offsetX, offsetY, offsetZ]}>
-        <PerspectiveCamera ref={portalCamRef} makeDefault={false} />
+        <PerspectiveCamera ref={portalCamRef} makeDefault={false} fov={60} />
       </group>
-      <Hallway args={[-11.7, -152, 150]} />
+      <Hallway position={[-9.88, -150.18, 200]} scale={[15.09, 22.59, 200]} />
       <ambientLight intensity={1} color='red' />
       <mesh
         ref={meshRef}
