@@ -19,4 +19,4 @@ export default function Deer(props) {
   );
 }
 
-useGLTF.preload('/deer.glb');
+useGLTF.preload('/assets/models/deer.glb');

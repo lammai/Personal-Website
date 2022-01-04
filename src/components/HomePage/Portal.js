@@ -153,7 +153,14 @@ export const Viewcube = React.forwardRef((props, ref) => {
 
   return (
     <>
-      <group ref={mainMoverRef} position={[0, 0, 0]}></group>
+      <group ref={mainMoverRef} position={[0, 0, 0]}>
+        <PerspectiveCamera
+          ref={camRef}
+          makeDefault
+          fov={60}
+          position={[-72, 72, 72]}
+        />
+      </group>
       <group ref={bCamMover} position={[offsetX, offsetY, offsetZ]}>
         <PerspectiveCamera ref={portalCamRef} makeDefault={false} fov={60} />
       </group>

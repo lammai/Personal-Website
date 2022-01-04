@@ -2,13 +2,11 @@ import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Box, OrbitControls, Stars, CameraShake } from '@react-three/drei';
 // import { useControls } from 'leva';
-import { softShadows, Html } from '@react-three/drei';
+import { Html } from '@react-three/drei';
 import Deer from '../models/Deer';
 import { canvasContainer } from '../../styling';
 import { Ocean } from './Ocean';
 import { Viewcube } from './Portal';
-
-softShadows();
 
 function ReflectionScene() {
   const starsRef = useRef();
@@ -58,7 +56,7 @@ const Home = () => {
   // });
   return (
     <div css={canvasContainer}>
-      <Canvas shadows camera={{ position: [-72, 72, 72], fov: 60 }}>
+      <Canvas camera={{ position: [-72, 72, 72], fov: 60 }}>
         {/* <fog attach='fog' args={[color, near, far]} /> */}
         <fog attach='fog' args={['#212122', -324, 420]} />
         <OrbitControls
@@ -72,23 +70,12 @@ const Home = () => {
           makeDefault
         />
         <ambientLight intensity={0.4} />
-        <directionalLight
-          intensity={1.5}
-          position={[2.5, 8, 5]}
-          castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-          shadow-camera-far={50}
-          shadow-camera-left={-10}
-          shadow-camera-right={10}
-          shadow-camera-top={10}
-          shadow-camera-bottom={-10}
-        />
+        <directionalLight intensity={1.5} position={[2.5, 8, 5]} />
         <pointLight position={[-10, 0, -20]} color='red' intensity={2.5} />
         <pointLight position={[0, -10, 0]} intensity={1.5} />
         <Suspense fallback={<Loading />}>
-          <ReflectionScene />
           <Viewcube />
+          <ReflectionScene />
         </Suspense>
         <CameraShake
           yawFrequency={0.05}

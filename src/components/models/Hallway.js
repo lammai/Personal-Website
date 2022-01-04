@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 
-const Hallway = React.forwardRef((props, ref) => {
+export default function Hallway(props, ref) {
   const group = useRef();
   const { nodes, materials } = useGLTF('/assets/models/hallway.glb');
   return (
@@ -18,7 +18,6 @@ const Hallway = React.forwardRef((props, ref) => {
       />
     </group>
   );
-});
+}
 
-useGLTF.preload('/hallway.glb');
-export default Hallway;
+useGLTF.preload('/assets/models/hallway.glb');
