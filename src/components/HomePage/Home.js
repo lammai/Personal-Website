@@ -60,7 +60,10 @@ const Home = () => {
     // });
     return (
         <div css={canvasContainer}>
-            <Canvas camera={{ position: [-72, 72, 72], fov: 60 }}>
+            <Canvas
+                gl={{ antialias: false }}
+                camera={{ position: [-72, 72, 72], fov: 60 }}
+            >
                 {/* <fog attach='fog' args={[color, near, far]} /> */}
                 <fog attach="fog" args={['#212122', -324, 420]} />
                 <OrbitControls
