@@ -53,7 +53,7 @@ export const Viewcube = React.forwardRef((props, ref) => {
         portalBref.current.layers.set(2);
 
         portalCref.current.layers.set(3);
-        portalDref.current.layers.set(3);
+        portalDref.current.layers.set(4);
 
         mainMoverRef.current.add(camRef.current);
     }, []);
