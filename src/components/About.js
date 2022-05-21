@@ -29,7 +29,7 @@ const Text = ({ label, symbol }) => {
     );
 };
 
-const LowpolySphere = (props) => {
+export const LowpolySphere = (props) => {
     const sphereRef = useRef();
 
     useFrame(({ clock }) => {

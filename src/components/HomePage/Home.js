@@ -28,13 +28,13 @@ function ReflectionScene() {
                 fade
                 ref={starsRef}
             />
-            <Box args={[30, 45, 0.6]} position={[-10, 23.01, -1.5]}>
+            {/* <Box args={[30, 45, 0.6]} position={[-10, 23.01, -1.5]}>
                 <meshPhysicalMaterial
                     color="red"
                     metalness={0.1}
                     roughness={0.3}
                 />
-            </Box>
+            </Box> */}
             <Ocean />
         </group>
     );
@@ -54,9 +54,9 @@ export function Loading() {
 
 const Home = () => {
     // const { color, near, far } = useControls({
-    //   color: '#212121',
-    //   near: { value: -324, min: -1000, max: 1000, step: 0.01 },
-    //   far: { value: 420, min: 0, max: 1000, step: 0.01 },
+    //     color: '#212121',
+    //     near: { value: -324, min: -1000, max: 1000, step: 0.01 },
+    //     far: { value: 420, min: 0, max: 1000, step: 0.01 },
     // });
     return (
         <div css={canvasContainer}>
@@ -64,15 +64,15 @@ const Home = () => {
                 gl={{ antialias: false }}
                 camera={{ position: [-72, 72, 72], fov: 60 }}
             >
-                {/* <fog attach='fog' args={[color, near, far]} /> */}
+                {/* <fog attach="fog" args={[color, near, far]} /> */}
                 <fog attach="fog" args={['#212122', -324, 420]} />
                 <OrbitControls
-                    enablePan={false}
-                    enableZoom={false}
-                    minPolarAngle={0}
-                    maxPolarAngle={Math.PI / 2.01}
-                    minAzimuthAngle={-Math.PI / 2}
-                    maxAzimuthAngle={Math.PI / 2}
+                    // enablePan={false}
+                    // enableZoom={false}
+                    // minPolarAngle={0}
+                    // maxPolarAngle={Math.PI / 2.01}
+                    // minAzimuthAngle={-Math.PI / 2}
+                    // maxAzimuthAngle={Math.PI / 2}
                     enableDamping={true}
                     makeDefault
                 />
