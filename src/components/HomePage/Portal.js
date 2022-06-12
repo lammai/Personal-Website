@@ -221,36 +221,22 @@ export const Viewcube = React.forwardRef((props, ref) => {
 
     const { x, y, z, rx, ry, rz } = useControls('Portal 1', {
         // position={[-10, 23.01, -1]}
-        x: { value: 56, min: -100, max: 100, step: 0.01 },
+        x: { value: 56, min: -50, max: 50, step: 0.01 },
         y: { value: 22, min: -100, max: 100, step: 0.01 },
-        z: { value: 30, min: -100, max: 100, step: 0.01 },
+        z: { value: 30, min: -300, max: 100, step: 0.01 },
         rx: { value: 0.39, min: -10, max: 10, step: 0.01 },
         ry: { value: 6.66, min: -10, max: 10, step: 0.01 },
         rz: { value: 6.66, min: -10, max: 10, step: 0.01 },
     });
 
-    const { cX, cY, cZ, crX, crY, crZ } = useControls('Portal 2', {
-        cX: { value: 0, min: -100, max: 100, step: 0.01 },
+    const { cY, crX, crY } = useControls('Portal 2', {
         cY: { value: 0.24, min: -100, max: 100, step: 0.01 },
-        cZ: { value: 30, min: -100, max: 100, step: 0.01 },
         crX: { value: 0, min: -10, max: 10, step: 0.01 },
         crY: { value: 2 * Math.PI, min: -10, max: 10, step: 0.01 },
-        crZ: { value: 0, min: -10, max: 10, step: 0.01 },
     });
-    const { dX, dY, dZ, drX, drY, drZ } = useControls('Portal 3', {
-        dX: { value: 0, min: -100, max: 100, step: 0.01 },
-        dY: { value: 0.24, min: -100, max: 100, step: 0.01 },
-        dZ: { value: 30, min: -100, max: 100, step: 0.01 },
+    const { drX, drY } = useControls('Portal 3', {
         drX: { value: 0, min: -10, max: 10, step: 0.01 },
         drY: { value: 2 * Math.PI, min: -10, max: 10, step: 0.01 },
-        drZ: { value: 0, min: -10, max: 10, step: 0.01 },
-    });
-
-    const { oX, oY, oZ } = useControls('OG Portal', {
-        // position={[-10, 23.01, -1]}
-        oX: { value: 0, min: -200, max: 200, step: 0.01 },
-        oY: { value: 23.01, min: -200, max: 200, step: 0.01 },
-        oZ: { value: -1, min: -200, max: 200, step: 0.01 },
     });
 
     return (
@@ -300,8 +286,9 @@ export const Viewcube = React.forwardRef((props, ref) => {
             <WorldPortal
                 ref={portalAref}
                 // position={[-10, 23.01, -1]}
-                position={[oX, oY, oZ]}
-                rotation={[0, 0, 0]}
+                position={props.position}
+                // rotation={[0, 0, 0]}
+                rotation={props.rotation}
             />
             <WorldPortal
                 ref={portalBref}
@@ -315,14 +302,14 @@ export const Viewcube = React.forwardRef((props, ref) => {
                 // position={[offsetX, offsetY, offsetZ]}
                 position={[x, cY, z]}
                 // rotation={[0, -Math.PI, 0]}
-                rotation={[crX, crY, rz / 4]}
+                rotation={[crX, crY, rz / 2]}
             />
             <WorldPortal
                 ref={portalDref}
                 // position={[offsetX, offsetY, offsetZ]}
                 position={[x, cY, z]}
                 // rotation={[0, -Math.PI, 0]}
-                rotation={[drX, drY, rz / 8]}
+                rotation={[drX, drY, rz / 2]}
             />
         </>
     );

@@ -1,7 +1,7 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Box, OrbitControls, Stars, CameraShake } from '@react-three/drei';
-// import { useControls } from 'leva';
+import { useControls } from 'leva';
 import { Html } from '@react-three/drei';
 import Deer from '../models/Deer';
 import { canvasContainer } from '../../styling';
@@ -58,6 +58,22 @@ const Home = () => {
     //     near: { value: -324, min: -1000, max: 1000, step: 0.01 },
     //     far: { value: 420, min: 0, max: 1000, step: 0.01 },
     // });
+    const { oX, oY, oZ } = useControls('OG Portal', {
+        // position={[-10, 23.01, -1]}
+        oX: { value: 0, min: -200, max: 200, step: 0.01 },
+        oY: { value: 23.01, min: -200, max: 200, step: 0.01 },
+        oZ: { value: -1, min: -200, max: 200, step: 0.01 },
+    });
+
+    const { aX, aY, aZ, rx, ry, rz } = useControls('Another Portal', {
+        // position={[-10, 23.01, -1]}
+        aX: { value: -60, min: -200, max: 200, step: 0.01 },
+        aY: { value: 23.01, min: -200, max: 200, step: 0.01 },
+        aZ: { value: 59, min: -200, max: 200, step: 0.01 },
+        rx: { value: 0, min: -10, max: 10, step: 0.01 },
+        ry: { value: Math.PI / 2, min: -10, max: 10, step: 0.01 },
+        rz: { value: 0, min: -10, max: 10, step: 0.01 },
+    });
     return (
         <div css={canvasContainer}>
             <Canvas
@@ -69,8 +85,8 @@ const Home = () => {
                 <OrbitControls
                     // enablePan={false}
                     // enableZoom={false}
-                    // minPolarAngle={0}
-                    // maxPolarAngle={Math.PI / 2.01}
+                    minPolarAngle={0}
+                    maxPolarAngle={Math.PI / 2.01}
                     // minAzimuthAngle={-Math.PI / 2}
                     // maxAzimuthAngle={Math.PI / 2}
                     enableDamping={true}
@@ -85,7 +101,16 @@ const Home = () => {
                 />
                 <pointLight position={[0, -10, 0]} intensity={1.5} />
                 <Suspense fallback={<Loading />}>
-                    <Viewcube />
+                    <Viewcube
+                        position={[0, 23.01, 119]}
+                        rotation={[0, Math.PI, 0]}
+                    />
+                    <Viewcube
+                        position={[60, 23.01, 59]}
+                        rotation={[0, -Math.PI / 2, 0]}
+                    />
+                    <Viewcube position={[aX, aY, aZ]} rotation={[rx, ry, rz]} />
+                    <Viewcube position={[oX, oY, oZ]} rotation={[0, 0, 0]} />
                     <ReflectionScene />
                 </Suspense>
                 <CameraShake
