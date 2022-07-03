@@ -73,7 +73,7 @@ const LowpolySphere = (props) => {
 
 export const About = () => {
     return (
-        <Canvas gl={{ antialias: false }}>
+        <Canvas>
             <OrbitControls enableZoom={false} enablePan={false} />
             <Suspense fallback={null}>
                 <LowpolySphere position={[0, 0, 0]} rotation={[0.15, 0, 0]} />
