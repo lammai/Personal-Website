@@ -47,9 +47,8 @@ const LowpolySphere = (props) => {
                     distanceFactor={7}
                     zIndexRange={[100, 0]}
                 >
-                    <Text label={'Hi! My name is Lam'} />
-                    <Text label={'UW Tacoma grad 2022'} symbol="🎓" />
-                    <Text label={'Incoming dev @ DocuSign'} symbol="📝" />
+                    <Text label={'Hi! 👋 My name is Lam'} />
+                    <Text label={'Software Engineer @ DocuSign'} symbol="📝" />
                 </Html>
                 <Link
                     position={[2, 0, 0]}
