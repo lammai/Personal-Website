@@ -185,22 +185,21 @@ export const ImageContainer = styled.div`
 export const ProjectWrapper = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
+    align-content: center;
 `;
 
 export const ProjectsDiv = styled.div`
     @media screen and (min-width: 40em) {
-        display: -webkit-box;
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        /* justify-content: space-between; */
     }
 
     position: absolute;
     text-align: center;
     top: 0;
 
-    align-items: center;
-    align-content: center;
     padding: 90px 60px;
     height: 100%;
     overflow: auto;
