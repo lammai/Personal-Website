@@ -68,15 +68,15 @@ export const Projects = () => {
                 <ProjectsDiv>
                     <ProjectComponent
                         image="/assets/textures/sigmagrind.gif"
-                        title="SigmaGrind"
-                        description="Web game based on the Megaman X series with slightly different movement mechanics."
+                        title="SigmaGrind 🗿"
+                        description="Web game based on the Megaman X series with slightly different movement mechanics. Made with ❤ in a group of four as part of TCSS 491."
                         technologies={[SiJavascript]}
                         githubLink="https://github.com/apotafiy/sigma-grind"
                     />
                     <ProjectComponent
                         image="/assets/textures/chatterbug.gif"
-                        title="ChatterBug"
-                        description="Android messaging app with weather forecast functionality."
+                        title="🐞 ChatterBug"
+                        description="Android messaging app with weather forecast functionality. Class project for TCSS 450, developed in a group of five."
                         technologies={[
                             FaAndroid,
                             FaJava,
@@ -89,14 +89,14 @@ export const Projects = () => {
                     <ProjectComponent
                         image="/assets/textures/Fract.gif"
                         title="FractalFX"
-                        description="Generate Mandelbrot and Julia sets. This was my introduction to JavaFX."
+                        description="Fractal explorer application made with JavaFX as an introduction to GUI programming with Java. Generate Mandelbrot and Julia fractals."
                         technologies={[FaJava]}
                         githubLink="https://github.com/lammai/FractalFX"
                     />
                     <ProjectComponent
                         image="/assets/textures/sigmameals.png"
                         title="SigmaMeals"
-                        description="Recipe website with an emphasis on budget."
+                        description="Recipe website with an emphasis on budget. Designed and developed for TCSS 445 as a class project in a group of four."
                         technologies={[
                             FaReact,
                             FaBootstrap,
@@ -110,14 +110,14 @@ export const Projects = () => {
                     <ProjectComponent
                         image="/assets/textures/highlightCombiner.png"
                         title="Highlight Combiner"
-                        description="Visually combine different highlights on the same PDF document."
+                        description="Visually combine highlights on multiple PDF documents onto one PDF. Developed with a group of four over the course of two days. Dubhacks 2020."
                         technologies={[FaJava, FaFilePdf]}
                         githubLink="https://github.com/treguv/dubhacks2020"
                     />
                     <ProjectComponent
                         image="/assets/textures/calc.gif"
-                        title="Calculator"
-                        description="Calculations/conversions for Binary, Hexadecimal, and Bandwidth."
+                        title="🤷‍♂️ Calculator"
+                        description="Calculations/conversions for Binary, Hexadecimal, and Bandwidth which able to compute extremely large inputs. Over-engineered for TCSS 305."
                         technologies={[FaJava]}
                         githubLink="https://github.com/lammai/handyCalculator"
                     />

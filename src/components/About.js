@@ -53,17 +53,17 @@ const LowpolySphere = (props) => {
                 <Link
                     position={[2, 0, 0]}
                     url={'mailto:lam7.2521@gmail.com'}
-                    label={'Email'}
+                    label={'Email 📨'}
                 />
                 <Link
                     position={[-2, 0, 0]}
                     url={'https://www.linkedin.com/in/lammal'}
-                    label={'LinkedIn'}
+                    label={'🔗 LinkedIn'}
                 />
                 <Link
                     position={[0, 0, 2]}
                     url={'https://github.com/lammai'}
-                    label={'Github'}
+                    label={'Github 🔀'}
                 />
             </mesh>
         </group>
