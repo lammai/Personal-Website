@@ -218,10 +218,10 @@ export const ProjectContainer = styled.div`
     }
 
     position: relative;
-    background: #181818;
+    background: #1d1d1d;
     width: 320px;
     height: 450px;
-    border-radius: 6px;
+    border-radius: 9px;
     transition: all 0.3s cubic-bezier(cubic-bezier(0.25, 0.8, 0.25, 1));
     overflow: hidden;
     &:hover {
@@ -238,13 +238,15 @@ export const ProjectContainer = styled.div`
         bottom: 20px;
         left: 20px;
         margin: 0;
-        padding: 0;
+        padding: 10px;
+        border-radius: 6px;
         color: #d3faff;
         font-size: 30px;
+        background-color: #364b56;
     }
 
     img {
-        height: 82%;
+        height: 85%;
         width: auto;
         transition: 0.3s;
     }
