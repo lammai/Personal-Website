@@ -242,7 +242,7 @@ export const ProjectContainer = styled.div`
         border-radius: 6px;
         color: #d3faff;
         font-size: 30px;
-        background-color: #364b56;
+        background-color: #28343c;
     }
 
     img {
