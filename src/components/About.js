@@ -65,6 +65,11 @@ const LowpolySphere = (props) => {
                     url={'https://github.com/lammai'}
                     label={'Github 🔀'}
                 />
+                <Link
+                    position={[0, 0, -2]}
+                    url={'/assets/resume-lammai.pdf'}
+                    label={'📜 Resume'}
+                />
             </mesh>
         </group>
     );
