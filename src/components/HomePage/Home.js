@@ -54,15 +54,15 @@ export function Loading() {
 
 const Home = () => {
     // const { color, near, far } = useControls({
-    //   color: '#212121',
-    //   near: { value: -324, min: -1000, max: 1000, step: 0.01 },
-    //   far: { value: 420, min: 0, max: 1000, step: 0.01 },
+    //     color: '#212121',
+    //     near: { value: -324, min: -1000, max: 1000, step: 0.01 },
+    //     far: { value: 420, min: -500, max: 1000, step: 0.01 },
     // });
     return (
         <div css={canvasContainer}>
             <Canvas camera={{ position: [-72, 72, 72], fov: 60 }}>
-                {/* <fog attach='fog' args={[color, near, far]} /> */}
-                <fog attach="fog" args={['#212122', -324, 420]} />
+                {/* <fog attach="fog" args={[color, near, far]} /> */}
+                <fog attach="fog" args={['#656565', -1000, 1000]} />
                 <OrbitControls
                     enablePan={false}
                     enableZoom={false}
