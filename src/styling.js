@@ -218,12 +218,16 @@ export const ProjectContainer = styled.div`
     }
 
     position: relative;
-    background: #1d1d1d;
+    /* background: #1d1d1d; */
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
     width: 320px;
     height: 450px;
     border-radius: 9px;
     transition: all 0.3s cubic-bezier(cubic-bezier(0.25, 0.8, 0.25, 1));
     overflow: hidden;
+
     &:hover {
         img {
             transform: scale(1.15) translate(0%, -12%);
@@ -236,13 +240,15 @@ export const ProjectContainer = styled.div`
     h2 {
         position: absolute;
         bottom: 20px;
-        left: 20px;
+        left: 15px;
         margin: 0;
-        padding: 10px;
-        border-radius: 6px;
+        padding: 6px 20px;
+        border-radius: 30px;
         color: #d3faff;
         font-size: 30px;
-        background-color: #28343c;
+        /* background-color: #28343c; */
+        background-color: rgba(59, 177, 255, 0.208);
+        border: 1px solid rgba(193, 193, 193, 0.3);
     }
 
     img {

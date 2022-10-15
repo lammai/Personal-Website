@@ -3,6 +3,43 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { DoubleSide, Vector3, Plane } from 'three';
 import { PerspectiveCamera } from '@react-three/drei';
 import Hallway from '../models/Hallway';
+import Deer from '../models/Deer';
+
+const HallLight = ({ pos }) => {
+    const ref = useRef();
+    const { clock } = useThree();
+    useFrame(() => {
+        const z = Math.sin(clock.getElapsedTime() / 2) * 2000 + pos;
+        ref.current.position.set(-10, -150, z);
+    });
+    return (
+        <rectAreaLight
+            ref={ref}
+            color={'#0000ff'}
+            intensity={450}
+            position={[-10, -150, pos]}
+            width={30}
+            height={45}
+        />
+    );
+};
+
+const HallLights = ({ count = 10 }) => {
+    let positions = new Array(count).fill([]);
+    for (let i = 0; i < count; i++) {
+        const z = 100 + i * 20 * (i + 1);
+        positions[i] = {
+            z: z,
+        };
+    }
+    return (
+        <>
+            {positions.map((i) => (
+                <HallLight pos={i.z} key={i.z} />
+            ))}
+        </>
+    );
+};
 
 const WorldPortal = React.forwardRef((props, ref) => {
     return (
@@ -31,10 +68,10 @@ const offsetY = -150;
 const offsetZ = 0;
 
 export const Viewcube = React.forwardRef((props, ref) => {
-    const { gl, scene, camera, clock } = useThree();
+    const { gl, scene, camera } = useThree();
 
     const portalCamRef = useRef();
-    const meshRef = useRef();
+    // const meshRef = useRef();
     const portalAref = useRef();
     const portalBref = useRef();
     const mainMoverRef = useRef();
@@ -48,8 +85,8 @@ export const Viewcube = React.forwardRef((props, ref) => {
     }, []);
 
     useFrame(() => {
-        meshRef.current.rotation.y = clock.getElapsedTime();
-        meshRef.current.rotation.x = clock.getElapsedTime();
+        // meshRef.current.rotation.y = clock.getElapsedTime();
+        // meshRef.current.rotation.x = clock.getElapsedTime();
 
         //relatively align other cam with main cam
         let relativePos = portalAref.current.worldToLocal(
@@ -168,18 +205,33 @@ export const Viewcube = React.forwardRef((props, ref) => {
                     fov={60}
                 />
             </group>
+            {/* {[...Array(5).keys()].map((i) => {
+                return (
+                    <>
+                        <rectAreaLight
+                            color={'#001eff'}
+                            intensity={300 / (i + 1)}
+                            position={[-10, -150, 96 * (i + 1)]}
+                            width={30}
+                            height={45}
+                        />
+                    </>
+                );
+            })} */}
+            <HallLights />
             <Hallway
-                position={[-9.88, -150.18, 200]}
-                scale={[15.09, 22.59, 200]}
+                position={[-9.88, -150.18, 1000]}
+                scale={[15.09, 22.59, 1000]}
             />
             <ambientLight intensity={1} color="red" />
-            <mesh
+            {/* <mesh
                 ref={meshRef}
-                position={[offsetX - 1.5, offsetY + 1, offsetZ + 240]}
+                position={[offsetX, offsetY + 6, offsetZ + 600]}
             >
                 <icosahedronGeometry args={[10, 0]} />
                 <meshBasicMaterial wireframe />
-            </mesh>
+            </mesh> */}
+            <Deer position={[offsetX + 5, offsetY + 63.5, offsetZ + 240]} />
             <WorldPortal
                 ref={portalAref}
                 position={[-10, 23.01, -1]}

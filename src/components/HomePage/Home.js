@@ -1,6 +1,6 @@
 import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Box, OrbitControls, Stars, CameraShake } from '@react-three/drei';
+import { OrbitControls, Stars, CameraShake, Box } from '@react-three/drei';
 // import { useControls } from 'leva';
 import { Html } from '@react-three/drei';
 import Deer from '../models/Deer';
@@ -18,7 +18,7 @@ function ReflectionScene() {
 
     return (
         <group>
-            <Deer />
+            <Deer position={[-5, 0, 15]} />
             <Stars
                 radius={6}
                 depth={60}
@@ -28,7 +28,7 @@ function ReflectionScene() {
                 fade
                 ref={starsRef}
             />
-            <Box args={[30, 45, 0.6]} position={[-10, 23.01, -1.5]}>
+            <Box args={[30, 45, 0.03]} position={[-10, 23.01, -1.08]}>
                 <meshPhysicalMaterial
                     color="red"
                     metalness={0.1}
@@ -61,8 +61,6 @@ const Home = () => {
     return (
         <div css={canvasContainer}>
             <Canvas camera={{ position: [-72, 72, 72], fov: 60 }}>
-                {/* <fog attach="fog" args={[color, near, far]} /> */}
-                <fog attach="fog" args={['#656565', -1000, 1000]} />
                 <OrbitControls
                     enablePan={false}
                     enableZoom={false}
@@ -73,15 +71,32 @@ const Home = () => {
                     enableDamping={true}
                     makeDefault
                 />
-                <ambientLight intensity={0.4} />
-                <directionalLight intensity={1.5} position={[2.5, 8, 5]} />
-                <pointLight
-                    position={[-10, 0, -20]}
-                    color="red"
-                    intensity={2.5}
-                />
-                <pointLight position={[0, -10, 0]} intensity={1.5} />
                 <Suspense fallback={<Loading />}>
+                    {/* <fog attach="fog" args={[color, near, far]} /> */}
+                    <fog attach="fog" args={['#656565', -1000, 1000]} />
+
+                    {/* {[...Array(5).keys()].map((i) => {
+                        return (
+                            <>
+                                <rectAreaLight
+                                    color={'#001eff'}
+                                    intensity={300}
+                                    position={[-10, -150, 96 * (i + 1)]}
+                                    width={30}
+                                    height={45}
+                                />
+                            </>
+                        );
+                    })} */}
+
+                    <ambientLight intensity={0.4} />
+                    <directionalLight intensity={1.5} position={[2.5, 8, 5]} />
+                    <pointLight
+                        position={[-10, 0, -20]}
+                        color="red"
+                        intensity={2.5}
+                    />
+                    <pointLight position={[0, -10, 0]} intensity={1.5} />
                     <Viewcube />
                     <ReflectionScene />
                 </Suspense>
