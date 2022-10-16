@@ -28,9 +28,9 @@ const Navbar = () => {
                     <NavLink onClick={() => setMenuOpen(false)} to="/gallery">
                         Gallery
                     </NavLink>
-                    <NavLink onClick={() => setMenuOpen(false)} to="/about">
+                    {/* <NavLink onClick={() => setMenuOpen(false)} to="/about">
                         About
-                    </NavLink>
+                    </NavLink> */}
                 </LinksContainer>
             </NavMenu>
             <Bars onClick={() => setMenuOpen(!menuOpen)} />

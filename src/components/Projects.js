@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import {
     ProjectContainer,
     ProjectsDiv,
@@ -24,8 +24,7 @@ import {
     SiJavascript,
 } from 'react-icons/si';
 import { Canvas } from '@react-three/fiber';
-import { Ocean } from './HomePage/Ocean';
-import { Html } from '@react-three/drei';
+import { OceanScene } from './HomePage/Ocean';
 
 const ProjectComponent = ({
     image,
@@ -124,18 +123,7 @@ export const Projects = () => {
                 </ProjectsDiv>
             </ProjectWrapper>
             <Canvas camera={{ position: [-72, 72, 72], fov: 60 }}>
-                <Suspense fallback={<Html center>Loading...</Html>}>
-                    {/* <fog attach='fog' args={['#212121', -324, 420]} /> */}
-                    <ambientLight intensity={0.9} />
-                    <directionalLight intensity={1.5} position={[2.5, 8, 5]} />
-                    <pointLight
-                        position={[-10, 0, -20]}
-                        color="red"
-                        intensity={2.5}
-                    />
-                    <pointLight position={[0, -10, 0]} intensity={1.5} />
-                    <Ocean />
-                </Suspense>
+                <OceanScene />
             </Canvas>
         </>
     );
