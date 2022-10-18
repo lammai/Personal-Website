@@ -24,7 +24,9 @@ export const canvasContainer = css`
 `;
 
 export const Nav = styled.nav`
-    background: transparent;
+    /* background: transparent; */
+    background-color: rgba(27, 27, 27, 0.088);
+    backdrop-filter: blur(6px);
     position: absolute;
     height: 80px;
     width: 100%;
@@ -239,7 +241,7 @@ export const ProjectContainer = styled.div`
 
     h2 {
         position: absolute;
-        bottom: 20px;
+        bottom: 36px;
         left: 15px;
         margin: 0;
         padding: 6px 20px;
@@ -249,6 +251,7 @@ export const ProjectContainer = styled.div`
         /* background-color: #28343c; */
         background-color: rgba(59, 177, 255, 0.208);
         border: 1px solid rgba(193, 193, 193, 0.3);
+        backdrop-filter: blur(10px);
     }
 
     img {

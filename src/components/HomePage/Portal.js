@@ -187,7 +187,7 @@ export const Viewcube = React.forwardRef((props, ref) => {
                     ref={camRef}
                     makeDefault
                     fov={60}
-                    position={[-27.64, 30.34, 119.41]}
+                    position={[-27.24, 33.79, 118.77]}
                 />
             </group>
             <group ref={bCamMover} position={[offsetX, offsetY, offsetZ]}>

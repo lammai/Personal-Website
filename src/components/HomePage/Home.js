@@ -60,27 +60,22 @@ const Home = () => {
     // });
     return (
         <>
-            <Canvas>
+            <Canvas camera={{ position: [-27.24, 33.79, 118.77], fov: 60 }}>
                 <OrbitControls
                     enablePan={false}
                     enableZoom={false}
-                    minPolarAngle={0}
-                    maxPolarAngle={Math.PI / 2.01}
-                    minAzimuthAngle={-Math.PI / 2}
-                    maxAzimuthAngle={Math.PI / 2}
+                    minPolarAngle={Math.PI / 60}
+                    maxPolarAngle={Math.PI / 1.85}
+                    minAzimuthAngle={-Math.PI / 2.045}
+                    maxAzimuthAngle={Math.PI / 2.045}
                     enableDamping={true}
-                    target={[6.16, 18.53, -3.53]}
+                    target={[-2.76, 18.53, -5.98]}
                     makeDefault
                 />
                 <CameraShake
-                    maxYaw={0.1}
-                    maxPitch={0.1}
-                    maxRoll={0.1}
-                    yawFrequency={0.075}
-                    pitchFrequency={0.075}
-                    rollFrequency={0.075}
-                    intensity={1}
-                    decayRate={0.6}
+                    yawFrequency={0.06}
+                    pitchFrequency={0.06}
+                    rollFrequency={0.06}
                 />
                 {/* <fog attach="fog" args={[color, near, far]} /> */}
                 <fog attach="fog" args={['#656565', -1000, 1000]} />
