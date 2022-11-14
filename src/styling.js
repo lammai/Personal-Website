@@ -310,7 +310,8 @@ export const ProjectGithub = styled(FaGithub)`
 
 export const LinkContainer = styled.div`
     padding: 5px 10px;
-    background-color: #000000;
+    background: rgba(0, 0, 0, 0.182);
+    border-radius: 6px;
     width: max-content;
     height: auto;
     a {
