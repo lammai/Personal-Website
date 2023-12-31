@@ -1,8 +1,12 @@
-# My personal website   
+# Personal Website
 
-I treated this as an experiment to create an interactive 3D art scene
+I treated this as an experiment to create 3D scene
+Developed portal logic from scratch using R3F in 1 week
 
-![preview](landingPage.png)   
+Currently using this as a sort of playground for experimenting with Three.js and React
+Hope to add more to this website in the future 🚧👷
+
+![preview](landingPage.png)
 #
 What I used:
 - **[⚛ React](https://reactjs.org/)**
