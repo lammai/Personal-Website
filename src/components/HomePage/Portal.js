@@ -191,19 +191,15 @@ export const Viewcube = React.forwardRef((props, ref) => {
                 />
             </group>
             <group ref={bCamMover} position={[offsetX, offsetY, offsetZ]}>
-                <PerspectiveCamera
-                    ref={portalCamRef}
-                    makeDefault={false}
-                    fov={60}
-                />
+                <PerspectiveCamera ref={portalCamRef} fov={60} />
             </group>
             <HallLights />
             <Hallway
                 position={[-9.88, -150.18, 1000]}
-                scale={[15.09, 22.59, 1000]}
+                scale={[15.09, 22.59, 2000]}
             />
-            <ambientLight intensity={1} color="red" />
-            <Deer position={[offsetX + 5, offsetY + 63.5, offsetZ + 240]} />
+            <ambientLight intensity={1.5} color="red" />
+            <Deer position={[offsetX + 5, offsetY + 63.5, offsetZ + 400]} />
             <WorldPortal
                 ref={portalAref}
                 position={[-10, 23.01, -1]}

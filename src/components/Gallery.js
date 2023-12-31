@@ -1,7 +1,7 @@
 import React from 'react';
 import { Gal, ImageContainer } from '../styling';
 import { Canvas } from '@react-three/fiber';
-import { OceanScene } from './HomePage/Ocean';
+import { Ocean } from './HomePage/Ocean';
 
 export const Gallery = () => {
     return (
@@ -28,7 +28,7 @@ export const Gallery = () => {
                 </ImageContainer>
             </Gal>
             <Canvas camera={{ position: [-72, 72, 72], fov: 60 }}>
-                <OceanScene />
+                <Ocean />
             </Canvas>
         </>
     );

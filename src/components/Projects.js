@@ -24,7 +24,7 @@ import {
     SiJavascript,
 } from 'react-icons/si';
 import { Canvas } from '@react-three/fiber';
-import { OceanScene } from './HomePage/Ocean';
+import { Ocean } from './HomePage/Ocean';
 
 const ProjectComponent = ({
     image,
@@ -123,7 +123,7 @@ export const Projects = () => {
                 </ProjectsDiv>
             </ProjectWrapper>
             <Canvas camera={{ position: [-72, 72, 72], fov: 60 }}>
-                <OceanScene />
+                <Ocean />
             </Canvas>
         </>
     );

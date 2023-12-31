@@ -12,6 +12,7 @@ import Deer from '../models/Deer';
 import { Ocean } from './Ocean';
 import { Viewcube } from './Portal';
 import { Intro, Link } from '../FloatingLinks';
+// import { Perf } from 'r3f-perf';
 
 function ReflectionScene() {
     const starsRef = useRef();
@@ -30,7 +31,7 @@ function ReflectionScene() {
 
     return (
         <group>
-            <Deer position={[-5, 0, 15]} />
+            <Deer position={[-5, -0.15, 15]} />
             <Stars
                 radius={6}
                 depth={60}
@@ -53,14 +54,16 @@ function ReflectionScene() {
 }
 
 const Home = () => {
+    const orbitRef = useRef();
     // const { color, near, far } = useControls({
     //     color: '#212121',
-    //     near: { value: -324, min: -1000, max: 1000, step: 0.01 },
-    //     far: { value: 420, min: -500, max: 1000, step: 0.01 },
+    //     near: { value: -324, min: -3000, max: 1000, step: 0.01 },
+    //     far: { value: 420, min: -500, max: 3000, step: 0.01 },
     // });
     return (
         <>
-            <Canvas camera={{ position: [-27.24, 33.79, 118.77], fov: 60 }}>
+            <Canvas>
+                {/* <Perf position="bottom-right" /> */}
                 <OrbitControls
                     enablePan={false}
                     enableZoom={false}
@@ -71,29 +74,37 @@ const Home = () => {
                     enableDamping={true}
                     target={[-2.76, 18.53, -5.98]}
                     makeDefault
+                    ref={orbitRef}
                 />
                 <CameraShake
-                    yawFrequency={0.06}
-                    pitchFrequency={0.06}
-                    rollFrequency={0.06}
+                    yawFrequency={0.045}
+                    pitchFrequency={0.045}
+                    rollFrequency={0.045}
+                    controls={orbitRef}
                 />
                 {/* <fog attach="fog" args={[color, near, far]} /> */}
-                <fog attach="fog" args={['#656565', -1000, 1000]} />
-                <ambientLight intensity={0.69} />
+                <fog attach="fog" args={['#212121', -3000, 1984]} />
+                {/* <ambientLight intensity={1} />
                 <pointLight
-                    position={[-10, 0, -20]}
+                    position={[-20, 0, -20]}
                     color="red"
-                    intensity={3}
+                    intensity={0}
                 />
-                <pointLight position={[-10, 20, 0]} intensity={1.5} />
+                <pointLight position={[-10, 20, 0]} intensity={5} />
+                <spotLight position={[-10, 5, 0]} color="green" intensity={5} /> */}
+                <pointLight
+                    color={'#d0f6ea'}
+                    position={[-10, 30, -5]}
+                    intensity={1000000}
+                />
                 <Suspense fallback={null}>
                     <Viewcube />
                     <ReflectionScene />
                     <Intro
                         position={[-8, 50, 0]}
-                        intro={'Hi! 👋 My name is Lam'}
-                        currentJob={'Software Engineer @ DocuSign'}
-                        symbol={'📝'}
+                        intro={'Hi! Looks like you found my website'}
+                        currentJob={'Have fun looking around'}
+                        symbol={'👀'}
                     />
                     <Link
                         position={[11, 10, 0]}

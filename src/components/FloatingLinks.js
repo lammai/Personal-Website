@@ -1,10 +1,17 @@
 import React from 'react';
 import { Html } from '@react-three/drei';
 import { LinkContainer } from '../styling';
+import Deer from './models/Deer';
 
 export const Link = ({ position, url, label }) => {
     return (
-        <Html scale={6} position={position} transform zIndexRange={[100, 0]}>
+        <Html
+            scale={6}
+            position={position}
+            transform
+            zIndexRange={[100, 0]}
+            occlude={Deer}
+        >
             <LinkContainer>
                 <a href={url}>{label}</a>
             </LinkContainer>
