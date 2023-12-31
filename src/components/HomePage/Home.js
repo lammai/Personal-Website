@@ -93,7 +93,8 @@ const Home = () => {
                 <pointLight position={[-10, 20, 0]} intensity={5} />
                 <spotLight position={[-10, 5, 0]} color="green" intensity={5} /> */}
                 <pointLight
-                    color={'#d0f6ea'}
+                    color={'#b41717'}
+                    // color={color}
                     position={[-10, 30, -5]}
                     intensity={1000000}
                 />
