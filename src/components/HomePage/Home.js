@@ -50,29 +50,14 @@ function ReflectionScene() {
             </Box>
             <Ocean rotationX={-Math.PI / 2} rotationY={0} />
             <Ocean
-                position={[90, 0, 0]}
-                rotationX={-Math.PI / 2.1}
-                rotationY={-Math.PI / 15}
-            />
-            <Ocean
-                position={[120, 0, 0]}
-                rotationX={-Math.PI / 2.1}
-                rotationY={-Math.PI / 10}
-            />
-            <Ocean
-                position={[-110, 0, 0]}
-                rotationX={-Math.PI / 1.96}
-                rotationY={Math.PI / 6}
-            />
-            <Ocean
                 position={[-90, 180, 0]}
                 rotationX={Math.PI / 1.96}
                 rotationY={Math.PI / 4}
             />
             <Ocean
-                position={[300, 0, 0]}
+                position={[220, 0, 0]}
                 rotationX={Math.PI / 1.96}
-                rotationY={-Math.PI / 2.5}
+                rotationY={-Math.PI / 4}
             />
         </group>
     );
