@@ -28,7 +28,7 @@ export const Gallery = () => {
                 </ImageContainer>
             </Gal>
             <Canvas camera={{ position: [-72, 72, 72], fov: 60 }}>
-                <Ocean />
+                <Ocean rotationX={-Math.PI / 2} rotationY={0} />
             </Canvas>
         </>
     );

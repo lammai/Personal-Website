@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { DoubleSide, Vector3, Plane } from 'three';
 import { PerspectiveCamera } from '@react-three/drei';
@@ -21,19 +21,6 @@ const HallLight = ({ pos }) => {
             width={30}
             height={45}
         />
-    );
-};
-
-const HallLights = ({ count = 10 }) => {
-    let positions = [...Array(count).keys()].map(
-        (i) => (i = 100 + i * 20 * (i + 1))
-    );
-    return (
-        <>
-            {positions.map((i) => (
-                <HallLight pos={i} key={i} />
-            ))}
-        </>
     );
 };
 
@@ -179,6 +166,19 @@ export const Viewcube = React.forwardRef((props, ref) => {
         gl.render(scene, camera);
         gl.autoClear = true;
     }, 1);
+
+    const HallLights = useCallback(({ count = 10 }) => {
+        let positions = [...Array(count).keys()].map(
+            (i) => (i = 100 + i * 20 * (i + 1))
+        );
+        return (
+            <>
+                {positions.map((i) => (
+                    <HallLight pos={i} key={i} />
+                ))}
+            </>
+        );
+    }, []);
 
     return (
         <>

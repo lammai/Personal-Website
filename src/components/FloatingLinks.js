@@ -32,8 +32,10 @@ export const Text = ({ label, symbol }) => {
 export const Intro = ({ position, intro, currentJob, symbol }) => {
     return (
         <Html scale={5} position={position} transform zIndexRange={[100, 0]}>
-            <Text label={intro} />
-            <Text label={currentJob} symbol={symbol} />
+            <div>
+                <Text label={intro} />
+                <Text label={currentJob} symbol={symbol} />
+            </div>
         </Html>
     );
 };

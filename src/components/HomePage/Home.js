@@ -48,7 +48,32 @@ function ReflectionScene() {
                     roughness={0.3}
                 />
             </Box>
-            <Ocean />
+            <Ocean rotationX={-Math.PI / 2} rotationY={0} />
+            <Ocean
+                position={[90, 0, 0]}
+                rotationX={-Math.PI / 2.1}
+                rotationY={-Math.PI / 15}
+            />
+            <Ocean
+                position={[120, 0, 0]}
+                rotationX={-Math.PI / 2.1}
+                rotationY={-Math.PI / 10}
+            />
+            <Ocean
+                position={[-110, 0, 0]}
+                rotationX={-Math.PI / 1.96}
+                rotationY={Math.PI / 6}
+            />
+            <Ocean
+                position={[-90, 180, 0]}
+                rotationX={Math.PI / 1.96}
+                rotationY={Math.PI / 4}
+            />
+            <Ocean
+                position={[300, 0, 0]}
+                rotationX={Math.PI / 1.96}
+                rotationY={-Math.PI / 2.5}
+            />
         </group>
     );
 }
@@ -62,15 +87,15 @@ const Home = () => {
     // });
     return (
         <>
-            <Canvas>
+            <Canvas autoFocus={true}>
                 {/* <Perf position="bottom-right" /> */}
                 <OrbitControls
                     enablePan={false}
                     enableZoom={false}
                     minPolarAngle={Math.PI / 60}
                     maxPolarAngle={Math.PI / 1.85}
-                    minAzimuthAngle={-Math.PI / 2.045}
-                    maxAzimuthAngle={Math.PI / 2.045}
+                    // minAzimuthAngle={-Math.PI / 2.045}
+                    // maxAzimuthAngle={Math.PI / 2.045}
                     enableDamping={true}
                     target={[-2.76, 18.53, -5.98]}
                     makeDefault
@@ -96,7 +121,7 @@ const Home = () => {
                     color={'#b41717'}
                     // color={color}
                     position={[-10, 30, -5]}
-                    intensity={1000000}
+                    intensity={1500000}
                 />
                 <Suspense fallback={null}>
                     <Viewcube />
