@@ -5,7 +5,13 @@ import { Water } from 'three/examples/jsm/objects/Water.js';
 
 extend({ Water });
 
-export const Ocean = ({ position = [0, 0, 0], rotationX, rotationY }) => {
+export const Ocean = ({
+    position = [0, 0, 0],
+    rotationX,
+    rotationY,
+    size,
+    sizeY = size,
+}) => {
     const ref = useRef();
     const gl = useThree((state) => state.gl);
     const waterNormals = useLoader(
@@ -13,7 +19,10 @@ export const Ocean = ({ position = [0, 0, 0], rotationX, rotationY }) => {
         '/assets/textures/waternormals.jpg'
     );
     waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
-    const geom = useMemo(() => new THREE.PlaneGeometry(3000, 3000), []);
+    const geom = useMemo(
+        () => new THREE.PlaneGeometry(size, sizeY ? sizeY : size),
+        []
+    );
     const config = useMemo(
         () => ({
             textureWidth: 512,

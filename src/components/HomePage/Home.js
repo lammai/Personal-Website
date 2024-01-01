@@ -48,16 +48,24 @@ function ReflectionScene() {
                     roughness={0.3}
                 />
             </Box>
-            <Ocean rotationX={-Math.PI / 2} rotationY={0} />
+            <mesh rotation-x={Math.PI * -0.5} position={[0, -1, 0]}>
+                <planeGeometry args={[3000, 3000]} />
+                <meshBasicMaterial color={'#212121'} />
+            </mesh>
+            <Ocean rotationX={-Math.PI / 2} rotationY={0} size={3000} />
             <Ocean
                 position={[-90, 180, 0]}
                 rotationX={Math.PI / 1.96}
                 rotationY={Math.PI / 4}
+                size={800}
+                sizeY={3000}
             />
             <Ocean
                 position={[220, 0, 0]}
                 rotationX={Math.PI / 1.96}
                 rotationY={-Math.PI / 4}
+                size={800}
+                sizeY={3000}
             />
         </group>
     );
